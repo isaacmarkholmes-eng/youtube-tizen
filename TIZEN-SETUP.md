@@ -106,7 +106,7 @@ Tizen **9.0 is fine** for this project. The app is a simple URL launcher (HTML +
 |-------|----------------|
 | `.tproject` platform | Targets `tv-samsung-9.0`; Studio may offer to change this during import — accept |
 | `required_version="2.3"` | Minimum TV firmware, **not** your Studio version. Keeps compatibility with older Samsung TVs |
-| App ID / package | Must be 10-char package + `.VideoLounge` id. Already set in `config.xml`; Studio may regenerate on first build — that is OK |
+| App ID / package | `package` must be **exactly 10** letters/digits (`VidLounge0`). `id` = `{package}.VideoLounge`. Do not add an extra character — `VidLounge01` is 11 and fails validation |
 | Certificates | Still use **Samsung Certificate Extension** (not plain Tizen certs) on 2023+ TVs |
 
 If import fails, use **File → New → Tizen Web Project → TV → Samsung TV**:

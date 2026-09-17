@@ -5,8 +5,8 @@
         version="1.0.0"
         viewmodes="maximized">
     <access origin="*" subdomains="true"/>
-    <tizen:application id="VidLounge01.VideoLounge"
-                       package="VidLounge01"
+    <tizen:application id="VidLounge0.VideoLounge"
+                       package="VidLounge0"
                        required_version="2.3"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
