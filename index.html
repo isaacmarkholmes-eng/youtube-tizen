@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Lounge</title>
+  <script src="config.js"></script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #0f1115;
+      color: #eef1f6;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      max-width: 36rem;
+      line-height: 1.5;
+    }
+
+    .error {
+      color: #ffb3c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="status">Loading Video Lounge…</div>
+  <script>
+    (function () {
+      var url = window.VIDEO_LOUNGE_URL || "";
+      var status = document.getElementById("status");
+
+      if (!url || url.indexOf("YOUR-SITE") !== -1) {
+        status.innerHTML =
+          '<p class="error">Set <code>VIDEO_LOUNGE_URL</code> in <code>tizen/config.js</code> ' +
+          "to your deployed site URL, then rebuild the .wgt package.</p>";
+        return;
+      }
+
+      window.location.replace(url);
+    })();
+  </script>
+</body>
+</html>
