@@ -88,18 +88,32 @@ C:\tizen-studio
 
 ---
 
-## Step 7 — Import this project
+## Step 7 — Import this project (Tizen Studio 9.0)
 
-1. Open **Tizen Studio**.
-2. **File → Import → Tizen → Tizen Web Project**.
-3. Choose **Archive File** or **Select root directory**.
-4. Point to this folder: `custom-youtube-player/tizen`
-5. Project name: **VideoLounge** → Finish.
+Tizen **9.0 is fine** for this project. The app is a simple URL launcher (HTML + redirect), so there are no Tizen 9 API breaking changes to worry about.
+
+1. Open **Tizen Studio 9.0**.
+2. **File → Import → Tizen → Tizen Project**.
+3. Choose **Select root directory** → Browse to `custom-youtube-player/tizen`.
+4. If the wizard shows **Not installed profile** or **Not installed version**:
+   - **Profile:** `tv-samsung`
+   - **Version:** `9.0` (or the latest TV SDK you installed)
+5. Select **VideoLounge** → Finish.
+
+**Import notes for 9.0:**
+
+| Topic | What to expect |
+|-------|----------------|
+| `.tproject` platform | Targets `tv-samsung-9.0`; Studio may offer to change this during import — accept |
+| `required_version="2.3"` | Minimum TV firmware, **not** your Studio version. Keeps compatibility with older Samsung TVs |
+| App ID / package | Must be 10-char package + `.VideoLounge` id. Already set in `config.xml`; Studio may regenerate on first build — that is OK |
+| Certificates | Still use **Samsung Certificate Extension** (not plain Tizen certs) on 2023+ TVs |
 
 If import fails, use **File → New → Tizen Web Project → TV → Samsung TV**:
 
 - Template: **Basic UI**
-- Copy `index.html`, `config.js`, and `config.xml` from this folder over the generated files.
+- Profile: **tv-samsung 9.0**
+- Copy `index.html`, `config.js`, and merge `config.xml` privileges/name from this folder
 
 ---
 
